@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('pembayarans', function (Blueprint $table) {
             $table->id();
+            $table->string('idPembayaran')->unique();
+            $table->date('tglPembayaran');
+            $table->bigInteger('pemesanans_id');
             $table->timestamps();
         });
     }
