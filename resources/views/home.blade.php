@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@extends('layouts.template')More actions
+@extends('layouts.template')
 @section('title')
     Halaman Dashboard
 @endsection

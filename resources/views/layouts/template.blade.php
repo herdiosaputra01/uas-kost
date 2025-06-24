@@ -14,10 +14,10 @@
 <link rel="stylesheet" href="{{asset("/dist/bootstrap/css/bootstrap.min.css")}}">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" sizes="16x16" href="dist/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset("/dist/img/favicon-16x16.png")}}">
 
 <!-- Google Font -->
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<link href="{{asset("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700")}}" rel="stylesheet">
 
 <!-- Theme style -->
 <link rel="stylesheet" href="{{asset("/dist/css/style.css")}}">
@@ -138,8 +138,9 @@
               <li><a href="#"><i class="icon-envelope"></i> Inbox</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="#"><i class="icon-gears"></i> Account Setting</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+              
+
+              
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
@@ -153,12 +154,7 @@
     <!-- sidebar -->
     <div class="sidebar"> 
       <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="image text-center"><img src="dist/img/img1.jpg" class="img-circle" alt="User Image"> </div>
-        <div class="info">
-          <p>Herdio Saputra</p>
-          <a href="#"><i class="fa fa-envelope"></i></a> <a href="#"><i class="fa fa-gear"></i></a> <a href="#"><i class="fa fa-power-off"></i></a> </div>
-      </div>
+     
       
       <!-- sidebar menu -->
       <ul class="sidebar-menu" data-widget="tree">
@@ -172,17 +168,30 @@
             <li><a href="index-ecommerce.html"><i class="fa fa-angle-right"></i> Ecommerce</a></li>
           </ul>
         </li>
-        <li class="treeview"> <a href="#"> <i class="icon-people"></i> <span>Pelanggan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"> <i class="icon-people"></i> <span>Pelanggan</span> <span class="pull-right-container"> </i> </span> </a>
         </li>
 
-        <li class="treeview"> <a href="#"> <i class="ti-layout-sidebar-left"></i> <span>Kamar</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"> <i class="ti-layout-sidebar-left"></i> <span>Kamar</span> <span class="pull-right-container"></i> </span> </a>
         </li>
 
-        <li class="treeview"> <a href="#"> <i class="fa-shopping-cart"></i> <span>Pemesanan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"> <i class="fa fa-shopping-cart"></i> <span>Pemesanan</span> <span class="pull-right-container"> </i> </span> </a>
         </li>
 
-        <li class="treeview"> <a href="#"> <i class="fa-money"></i> <span>Pembayaran</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"> <i class="fa fa-money"></i> <span>Pembayaran</span> <span class="pull-right-container"> </i> </span> </a>
         </li>
+
+         <li class="treeview"> <a href="#"> <i class="fa fa-money"></i> <span> embayaran</span> <span class="pull-right-container"> </i> </span> </a>
+        </li>
+        
+        <li role="separator" class="divider"></li>
+              <li><a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"></a>
+                                        {{ __('Logout') }}</li>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
 
 
     <!-- /.sidebar --> 
@@ -218,7 +227,7 @@ Terima kasih telah berkunjung. Temukan berbagai informasi dan layanan terbaik ya
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">Version 1.0</div>
-    Copyright © 2018 Yourdomian. All rights reserved.</footer>
+    Copyright © 2025 Yourdomian. All rights reserved.</footer>
   
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark"> 
@@ -244,7 +253,7 @@ Terima kasih telah berkunjung. Temukan berbagai informasi dan layanan terbaik ya
 <script src="{{asset("/dist/js/bizadmin.js")}}"></script> 
 
 <!-- for demo purposes --> 
-<script src="{{asset("/dist/js/demo.js")}}"></script>
+{{-- <script src="{{asset("/dist/js/demo.js")}}"></script> --}}
 <!--Start of Tawk.to Script-->
 <script type="{{asset("/text/javascript")}}">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
