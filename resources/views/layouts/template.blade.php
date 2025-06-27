@@ -43,7 +43,7 @@
     <!-- mini logo for sidebar mini 50x50 pixels --> 
     <span class="logo-mini"><img src="dist/img/logo-small.png" alt=""></span> 
     <!-- logo for regular state and mobile devices --> 
-    <span class="logo-lg"><img src="dist/img/logo.png" alt=""></span> </a> 
+    <span class="logo-lg"><img src="dist/img/lg.png" alt="Logo" style="height: 100px;">
     <!-- Header Navbar -->
     <nav class="navbar blue-bg navbar-static-top"> 
       <!-- Sidebar toggle button-->
@@ -138,7 +138,14 @@
               <li><a href="#"><i class="icon-envelope"></i> Inbox</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="#"><i class="icon-gears"></i> Account Setting</a></li>
-              
+              <li role="separator" class="divider"></li>
+              <li><a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i>{{ __('Logout') }}</a></li>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
 
               
             </ul>
@@ -168,7 +175,7 @@
             <li><a href="index-ecommerce.html"><i class="fa fa-angle-right"></i> Ecommerce</a></li>
           </ul>
         </li>
-        <li class="treeview"> <a href="#"> <i class="icon-people"></i> <span>Pelanggan</span> <span class="pull-right-container"> </i> </span> </a>
+        <li class="treeview"> <a href="/pelanggan"> <i class="icon-people"></i> <span>Pelanggan</span> <span class="pull-right-container"> </i> </span> </a>
         </li>
 
         <li class="treeview"> <a href="#"> <i class="ti-layout-sidebar-left"></i> <span>Kamar</span> <span class="pull-right-container"></i> </span> </a>
@@ -178,20 +185,8 @@
         </li>
 
         <li class="treeview"> <a href="#"> <i class="fa fa-money"></i> <span>Pembayaran</span> <span class="pull-right-container"> </i> </span> </a>
-        </li>
-
-         <li class="treeview"> <a href="#"> <i class="fa fa-money"></i> <span> embayaran</span> <span class="pull-right-container"> </i> </span> </a>
-        </li>
+        </li>       
         
-        <li role="separator" class="divider"></li>
-              <li><a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"></a>
-                                        {{ __('Logout') }}</li>
-
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
 
 
     <!-- /.sidebar --> 

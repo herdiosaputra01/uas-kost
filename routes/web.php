@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\pelanggansController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -25,8 +26,9 @@ Route::get('/cektemplate', function () {
     return view('layouts.template');
 });
 
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//data pelanggan
+Route::get('/pelanggan', [pelanggansController::class, 'index']);
