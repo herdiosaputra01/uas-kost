@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kamar;
 use Illuminate\Http\Request;
 
-class pelanggansController extends Controller
+class kamarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,6 +13,9 @@ class pelanggansController extends Controller
     public function index()
     {
         //
+        $nomor = 1;
+        $kamar = Kamar::all();
+        return view('Kamar.index', compact('kamar','nomor'));
     }
 
     /**

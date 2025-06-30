@@ -41,9 +41,9 @@
     <!-- Logo --> 
     <a href="index.html" class="logo blue-bg"> 
     <!-- mini logo for sidebar mini 50x50 pixels --> 
-    <span class="logo-mini"><img src="dist/img/logo-small.png" alt=""></span> 
+    <span class="logo-mini"><img src="dist/img/lg.png" alt="Logo" style="height: 60px;"></span> 
     <!-- logo for regular state and mobile devices --> 
-    <span class="logo-lg"><img src="dist/img/lg.png" alt="Logo" style="height: 100px;">
+    <span class="logo-lg"><img src="dist/img/lg.png" alt="Logo" style="height: 60px;">
     <!-- Header Navbar -->
     <nav class="navbar blue-bg navbar-static-top"> 
       <!-- Sidebar toggle button-->
@@ -61,9 +61,9 @@
               <li>
                 <ul class="menu">
                   <li><a href="#">
-                    <div class="pull-left"><img src="dist/img/img1.jpg" class="img-circle" alt="User Image"> <span class="profile-status online pull-right"></span></div>
-                    <h4>Alex C. Patton</h4>
-                    <p>I've finished it! See you so...</p>
+                    <div class="pull-left"><img src="dist/img/001.jpg" class="img-circle" alt="User Image"> <span class="profile-status online pull-right"></span></div>
+                    <h4>Hanif Ferdiansyah</h4>
+                    <p>Memesan Kamar 001</p>
                     <p><span class="time">9:30 AM</span></p>
                     </a></li>
                   <li><a href="#">
@@ -127,10 +127,10 @@
             </ul>
           </li>
           <!-- User Account  -->
-          <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="dist/img/img1.jpg" class="user-image" alt="User Image"> <span class="hidden-xs">Alexander Pierce</span> </a>
+          <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="dist/img/04.JPG" class="user-image" alt="User Image"> <span class="hidden-xs">Herdio Saputra</span> </a>
             <ul class="dropdown-menu">
               <li class="user-header">
-                <div class="pull-left user-img"><img src="dist/img/img1.jpg" class="img-responsive img-circle" alt="User"></div>
+                <div class="pull-left user-img"><img src="dist/img/04.JPG" class="img-responsive img-circle" alt="User"></div>
                 <p class="text-left">Herdio Saputra <small>herdiosaputra01@gmail.com</small> </p>
               </li>
               <li><a href="#"><i class="icon-profile-male"></i> My Profile</a></li>
@@ -175,19 +175,19 @@
             <li><a href="index-ecommerce.html"><i class="fa fa-angle-right"></i> Ecommerce</a></li>
           </ul>
         </li>
-        <li class="treeview"> <a href="/pelanggan"> <i class="icon-people"></i> <span>Pelanggan</span> <span class="pull-right-container"> </i> </span> </a>
+
+        <li> <a href="/pelanggan"> <i class="icon-people"></i> <span>Pelanggan</span> <span class="pull-right-container"> </i> </span> </a>
         </li>
 
-        <li class="treeview"> <a href="#"> <i class="ti-layout-sidebar-left"></i> <span>Kamar</span> <span class="pull-right-container"></i> </span> </a>
+        <li> <a href="/kamar"> <i class="ti-layout-sidebar-left"></i> <span>Kamar</span> <span class="pull-right-container"></i> </span> </a>
         </li>
 
-        <li class="treeview"> <a href="#"> <i class="fa fa-shopping-cart"></i> <span>Pemesanan</span> <span class="pull-right-container"> </i> </span> </a>
+        <li> <a href="#"> <i class="fa fa-shopping-cart"></i> <span>Pemesanan</span> <span class="pull-right-container"> </i> </span> </a>
         </li>
 
-        <li class="treeview"> <a href="#"> <i class="fa fa-money"></i> <span>Pembayaran</span> <span class="pull-right-container"> </i> </span> </a>
-        </li>       
+        <li> <a href="#"> <i class="fa fa-money"></i> <span>Pembayaran</span> <span class="pull-right-container"> </i> </span> </a>
+        </li>
         
-
 
     <!-- /.sidebar --> 
   </aside>
@@ -196,7 +196,7 @@
   <div class="content-wrapper"> 
     <!-- Content Header (Page header) -->
     <div class="content-header sty-one">
-      <h1>Blank page</h1>
+      <h1>@yield('headline')</h1>
       <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li><i class="fa fa-angle-right"></i> <a href="#">Pages</a></li>
@@ -206,7 +206,8 @@
     
     <!-- Main content -->
     <div class="content">
-      <div class="row">
+      @yield('content')
+      {{-- <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
@@ -215,7 +216,7 @@ Terima kasih telah berkunjung. Temukan berbagai informasi dan layanan terbaik ya
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
     </div>
     <!-- /.content --> 
   </div>
