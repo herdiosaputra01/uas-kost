@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-Data Kamar
+Data Pemesanan
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@ Data Kamar
         <div class="col-12">
             <div class="card">
                 <div class="float-end mb-3">
-                    <a href="/kamar/tambah" class="btn btn-primary btn-sm me-2">
+                    <a href="/pemesanan/tambah" class="btn btn-primary btn-sm me-2">
                         <i class="fa fa-user-plus"></i> Tambah Data
                     </a>
                 </div>
@@ -21,28 +21,29 @@ Data Kamar
                         <thead>
                             <tr>
                                 <th scope="col">NO</th>
-                                <th scope="col">Nomor Kamar</th>
-                                <th scope="col">Tipe Kamar</th>
-                                <th scope="col">Harga</th>
-                                <th scope="col">Waktu</th>
+                                <th scope="col">No Pemesanan</th>
+                                <th scope="col">Id Kamar</th>
+                                <th scope="col">Tanggal Masuk</th>
+                                <th scope="col">Tanggal Keluar</th>
+                                <th scope="col">Id Pelanggan</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
 
                             <tbody>
-                                @forelse ($kamar as $data)
+                                @forelse ($pemesanan as $data)
                                     <tr>
                                         <th scope="row">{{$nomor++}}</th>
-                                        <td>{{$data->idkamar}}</td>
-                                        <td>{{$data->nokamar}}</td>
-                                        <td>{{$data->tipekamar}}</td>
-                                        <td>{{$data->harga}}</td>
-                                        <td>{{$data->waktu}}</td>
+                                        <td>{{$data->noPemesanan}}</td>
+                                        <td>{{$data->kamars_id}}</td>
+                                        <td>{{$data->tglMasuk}}</td>
+                                        <td>{{$data->tglKeluar}}</td>
+                                        <td>{{$data->pelanggans_id}}</td>
                                         <td>
                                             <a href="" class="btn btn-warning btn-sm">
                                                 <i class="fa fa-eye"></i>
                                             </a>
-                                            <a href="/kamar/edit/{{$data->id}}" class="btn btn-info btn-sm">
+                                            <a href="/pemesanan/edit/{{$data->id}}" class="btn btn-info btn-sm">
                                                 <i class="ti-pencil-alt"></i>
                                             </a>
                                        
@@ -62,7 +63,7 @@ Data Kamar
                                                     </div>
 
                                                     <div class="modal-body">
-                                                        Yakin Data Kamar {{$data->nokamar}} ingin dihapus?
+                                                        Yakin Data Pemesanan a.n. {{$data->noPemesanan}} ingin dihapus?
                                                     </div>
 
                                                     <div class="modal-footer">

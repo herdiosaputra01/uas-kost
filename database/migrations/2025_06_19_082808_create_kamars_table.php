@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('idKamar')->unique();
             $table->string('noKamar',100);
             $table->string('tipeKamar',100);
-            $table->integer('harga');
+            $table->string('harga');
+            $table->string('waktu');
             $table->timestamps();
         });
     }

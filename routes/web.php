@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\kamarController;
 use App\Http\Controllers\pelangganController;
+use App\Http\Controllers\pemesananController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -38,7 +39,9 @@ Route::get('/pelanggan/tambah', [pelangganController::class, 'create']);
 Route::post('/pelanggan', [pelangganController::class, 'store']);
 Route::get('/pelanggan/edit/{id}', [pelangganController::class, 'edit']);
 Route::put('/pelanggan/{id}', [pelangganController::class, 'update']);
-Route::delete('/pelanggan/{id}', [pelangganController::class, 'destroy']);
+Route::delete('/pelanggan/{id}', [PelangganController::class, 'destroy'])->name('pelanggan.destroy');
+
+// Route::delete('/pelanggan/{id}', [pelangganController::class, 'destroy']);
 
 // | Method | URL                  | Fungsi Controller |
 // | ------ | -------------------- | ----------------- |
@@ -50,9 +53,18 @@ Route::delete('/pelanggan/{id}', [pelangganController::class, 'destroy']);
 // | PUT    | /pelanggan/{id}      | `update()`        |
 // | DELETE | /pelanggan/{id}      | `destroy()`       |
 
-
-// Route::get('/pelanggan', [pelangganController::class, 'index']);
-// Route::get('/pelanggan/tambah', [pelangganController::class, 'create']);
-
 //data kamar
 Route::get('/kamar', [kamarController::class, 'index']);
+Route::get('/kamar/tambah', [kamarController::class, 'create']);
+Route::post('/kamar', [kamarController::class, 'store']);
+Route::get('/kamar/edit/{id}', [kamarController::class, 'edit']);
+Route::put('/kamarn/{id}', [kamarController::class, 'update']);
+Route::delete('/kamar/{id}', [kamarController::class, 'destroy'])->name('kamar.destroy');
+
+//data pemesanan
+Route::get('/pemesanan', [pemesananController::class, 'index']);
+Route::get('/pemesanan/tambah', [pemesananController::class, 'create']);
+Route::post('/pemesanan', [pemesananController::class, 'store']);
+Route::get('/pemesanan/edit/{id}', [pemesananController::class, 'edit']);
+Route::put('/pemesanan/{id}', [pemesananController::class, 'update']);
+Route::delete('/pemesanan/{id}', [pemesananController::class, 'destroy'])->name('kamar.destroy');

@@ -24,6 +24,7 @@ class kamarController extends Controller
     public function create()
     {
         //
+        return view('kamar.form');
     }
 
     /**
@@ -32,6 +33,15 @@ class kamarController extends Controller
     public function store(Request $request)
     {
         //
+        $kamar = new Kamar;
+        $kamar->idKamar = $request->idKamar;
+        $kamar->noKamar = $request->noKamar;
+        $kamar->tipeKamar = $request->tipeKamar;
+        $kamar->harga = $request->harga;
+        $kamar->waktu = $request->waktu;
+        $kamar->save();
+
+        return redirect('/kamar');
     }
 
     /**
@@ -40,6 +50,8 @@ class kamarController extends Controller
     public function show(string $id)
     {
         //
+        $kamar = Kamar::find($id);
+        return view('Kamar.edit',compact('Kamar'));
     }
 
     /**
@@ -48,6 +60,8 @@ class kamarController extends Controller
     public function edit(string $id)
     {
         //
+    
+        return redirect('/kamar')->with('success', 'Data berhasil diupdate!');
     }
 
     /**

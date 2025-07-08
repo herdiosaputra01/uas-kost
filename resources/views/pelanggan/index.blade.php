@@ -65,11 +65,12 @@ Data Pelanggan
 
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                            <form action="spelanggan/{{$data->id}}" method="post">
+                                                            <form action="{{ route('pelanggan.destroy', $data->id) }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                                 <button type="submit" class="btn btn-danger">Hapus</button>
                                                             </form>
+
                                                     </div>
                                                 </div>
                                             </div>

@@ -182,7 +182,7 @@
         <li> <a href="/kamar"> <i class="ti-layout-sidebar-left"></i> <span>Kamar</span> <span class="pull-right-container"></i> </span> </a>
         </li>
 
-        <li> <a href="#"> <i class="fa fa-shopping-cart"></i> <span>Pemesanan</span> <span class="pull-right-container"> </i> </span> </a>
+        <li> <a href="/pemesanan"> <i class="fa fa-shopping-cart"></i> <span>Pemesanan</span> <span class="pull-right-container"> </i> </span> </a>
         </li>
 
         <li> <a href="#"> <i class="fa fa-money"></i> <span>Pembayaran</span> <span class="pull-right-container"> </i> </span> </a>
