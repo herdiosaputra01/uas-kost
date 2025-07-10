@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\kamarController;
 use App\Http\Controllers\pelangganController;
 use App\Http\Controllers\pembayaranController;
@@ -31,7 +32,10 @@ Route::get('/cektemplate', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//data dashboard
+Route::get('/dashboard', [dashboardController::class, 'index']);
 
 //data pelanggan
 

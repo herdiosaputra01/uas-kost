@@ -165,8 +165,11 @@
       
       <!-- sidebar menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">PERSONAL</li>
-        <li class="treeview"> <a href="../home"> <i class="icon-home"></i> <span>Dashboard</span> <span class="pull-right-container"></i> </span> </a>
+        {{-- <li class="header">PERSONAL</li>
+        <li class="treeview"> <a href="/dashboard"> <i class="icon-home"></i> <span>Dashboard</span> <span class="pull-right-container"></i> </span> </a>
+        </li> --}}
+
+        <li> <a href="/dashboard"> <i class="icon-home"></i> <span>Dashboard</span> <span class="pull-right-container"> </i> </span> </a>
         </li>
 
         <li> <a href="/pelanggan"> <i class="icon-people"></i> <span>Pelanggan</span> <span class="pull-right-container"> </i> </span> </a>
@@ -188,14 +191,14 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper"> 
     <!-- Content Header (Page header) -->
-    <div class="content-header sty-one">
+    {{-- <div class="content-header sty-one">
       <h1>@yield('headline')</h1>
       <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li><i class="fa fa-angle-right"></i> <a href="#">Pages</a></li>
         <li><i class="fa fa-angle-right"></i> Blank page</li>
       </ol>
-    </div>
+    </div> --}}
     
     <!-- Main content -->
     <div class="content">

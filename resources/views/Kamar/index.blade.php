@@ -63,7 +63,7 @@ Data Kamar
                                                     </div>
 
                                                     <div class="modal-body">
-                                                        Yakin Data Pemesanan {{$data->noKamar}} ingin dihapus?
+                                                        Yakin Data Kamar {{$data->noKamar}} ingin dihapus?
                                                     </div>
 
                                                     <div class="modal-footer">

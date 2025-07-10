@@ -34,7 +34,13 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<body class="login-page sty1" style="background-image: url('dist/img/p.kmr.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<body class="login-page sty1" 
+      style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+             url('{{ asset('dist/img/p.kmr.jpg') }}');
+             background-size: cover; 
+             background-position: center; 
+             background-repeat: no-repeat;
+             min-height: 100vh;">
 
 </head>
 <body class="login-page">
