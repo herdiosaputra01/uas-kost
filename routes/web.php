@@ -40,7 +40,7 @@ Route::get('/pelanggan/tambah', [pelangganController::class, 'create']);
 Route::post('/pelanggan', [pelangganController::class, 'store']);
 Route::get('/pelanggan/edit/{id}', [pelangganController::class, 'edit']);
 Route::put('/pelanggan/{id}', [pelangganController::class, 'update']);
-Route::delete('/pelanggan/{id}', [PelangganController::class, 'destroy'])->name('pelanggan.destroy');
+Route::delete('/pelanggan/{id}', [PelangganController::class, 'destroy'])->name('pelanggan.destroy');  
 
 
 // Route::delete('/pelanggan/{id}', [pelangganController::class, 'destroy']);
