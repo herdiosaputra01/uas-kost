@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('kamars', function (Blueprint $table) {
             $table->id();
             $table->string('idKamar')->unique();
-            $table->string('noKamar',100);
+            $table->integer('noKamar');
             $table->string('tipeKamar',100);
-            $table->string('harga');
-            $table->string('waktu');
+            $table->integer('harga');
+            $table->string('waktu',100);
             $table->timestamps();
         });
     }

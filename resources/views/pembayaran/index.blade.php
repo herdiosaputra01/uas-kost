@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-Data Kamar
+Data Pembayaran
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@ Data Kamar
         <div class="col-12">
             <div class="card">
                 <div class="float-end mb-3">
-                    <a href="/kamar/tambah" class="btn btn-primary btn-sm me-2">
+                    <a href="/pembayaran/tambah" class="btn btn-primary btn-sm me-2">
                         <i class="fa fa-user-plus"></i> Tambah Data
                     </a>
                 </div>
@@ -21,31 +21,27 @@ Data Kamar
                         <thead>
                             <tr>
                                 <th scope="col">NO</th>
-                                <th scope="col">Id Kamar</th>
-                                <th scope="col">No Kamar</th>
-                                <th scope="col">Tipe Kamar</th>
-                                <th scope="col">Harga</th>
-                                <th scope="col">Warga</th>
+                                <th scope="col">Id Pembayaran</th>
+                                <th scope="col">Tanggal Pembayaran</th>
+                                <th scope="col">Id Pemesanan</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
 
                             <tbody>
-                                @forelse ($kamar as $data)
+                                @forelse ($pembayaran as $data)
                                     <tr>
                                         <th scope="row">{{$nomor++}}</th>
-                                        <td>{{$data->idKamar}}</td>
-                                        <td>{{$data->noKamar}}</td>
-                                        <td>{{$data->tipeKamar}}</td>
-                                        <td>{{$data->harga}}</td>
-                                        <td>{{$data->waktu}}</td>
+                                        <td>{{$data->idPembayaran}}</td>
+                                        <td>{{$data->tglPembayaran}}</td>
+                                        <td>{{$data->pemesanans_id}}</td>
                                         <td>
                                             <a href="" class="btn btn-warning btn-sm">
                                                 <i class="fa fa-eye"></i>
                                             </a>
-                                            <a href="{{ url('/kamar/edit/' . $data->id) }}" class="btn btn-info btn-sm">
-                                            <i class="ti-pencil-alt"></i>
-                                        </a>
+                                            <a href="/pembayaran/edit/{{$data->id}}" class="btn btn-info btn-sm">
+                                                <i class="ti-pencil-alt"></i>
+                                            </a>
                                        
 
                                             <!-- Button trigger modal -->
@@ -63,12 +59,12 @@ Data Kamar
                                                     </div>
 
                                                     <div class="modal-body">
-                                                        Yakin Data Pemesanan {{$data->noKamar}} ingin dihapus?
+                                                        Yakin Data Pembayaran {{$data->idPembayaran}} ingin dihapus?
                                                     </div>
 
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                            <form action="{{ route('kamar.destroy', $data->id) }}" method="POST">
+                                                            <form action="{{ route('pembayaran.destroy', $data->id) }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                                 <button type="submit" class="btn btn-danger">Hapus</button>

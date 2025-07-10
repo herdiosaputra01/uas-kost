@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-Data Pelanggan
+    Data Pelanggan
 @endsection
 
 @section('content')
@@ -10,79 +10,77 @@ Data Pelanggan
         <div class="col-12">
             <div class="card">
                 <div class="float-end mb-3">
-                    <a href="/pelanggan/tambah" class="btn btn-primary btn-sm me-2">
+                    <a href="{{ url('/pelanggan/tambah') }}" class="btn btn-primary btn-sm me-2">
                         <i class="fa fa-user-plus"></i> Tambah Data
                     </a>
                 </div>
 
                 <div class="card-body">
-
-                    <table class="table">
-                        <thead>
+                    <table class="table table-bordered">
+                        <thead class="table-light">
                             <tr>
                                 <th scope="col">NO</th>
+                                <th scope="col">ID Pelanggan</th>
                                 <th scope="col">Nama Pelanggan</th>
                                 <th scope="col">Alamat</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            @forelse ($pelanggan as $data)
+                                <tr>
+                                    <th scope="row">{{ $loop->iteration }}</th>
+                                    <td>{{ $data->idPelanggan }}</td>
+                                    <td>{{ $data->namaPelanggan }}</td>
+                                    <td>{{ $data->alamatPelanggan }}</td>
+                                    <td>{{ $data->email }}</td>
+                                    <td>
+                                        <!-- Detail button (non-functional placeholder) -->
+                                        <button class="btn btn-warning btn-sm" disabled>
+                                            <i class="fa fa-eye"></i>
+                                        </button>
 
-                            <tbody>
-                                @forelse ($pelanggan as $data)
-                                    <tr>
-                                        <th scope="row">{{$nomor++}}</th>
-                                        <td>{{$data->idPelanggan}}</td>
-                                        <td>{{$data->namaPelanggan}}</td>
-                                        <td>{{$data->alamatPelanggan}}</td>
-                                        <td>{{$data->email}}</td>
-                                        <td>
-                                            <a href="" class="btn btn-warning btn-sm">
-                                                <i class="fa fa-eye"></i>
-                                            </a>
-                                            <a href="/pelanggan/edit/{{$data->id}}" class="btn btn-info btn-sm">
-                                                <i class="ti-pencil-alt"></i>
-                                            </a>
-                                       
+                                        <!-- Edit -->
+                                        <a href="{{ url('/pelanggan/edit/' . $data->id) }}" class="btn btn-info btn-sm">
+                                            <i class="ti-pencil-alt"></i>
+                                        </a>
 
-                                            <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{$data->id}}">
-                                                <i class="fa fa-trash"></i>
-                                            </button>
+                                        <!-- Delete Modal Trigger -->
+                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $data->id }}">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
 
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="exampleModal{{$data->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <!-- Delete Modal -->
+                                        <div class="modal fade" id="deleteModal{{ $data->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $data->id }}" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="modalLabel{{ $data->id }}">Konfirmasi Hapus</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
                                                     </div>
-
                                                     <div class="modal-body">
-                                                        Yakin Data Pelanggan a.n. {{$data->namaPelanggan}} ingin dihapus?
+                                                        Apakah kamu yakin ingin menghapus pelanggan <strong>{{ $data->namaPelanggan }}</strong>?
                                                     </div>
-
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                            <form action="{{ route('pelanggan.destroy', $data->id) }}" method="POST">
+                                                        <form action="{{ route('pelanggan.destroy', $data->id) }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
-                                                                <button type="submit" class="btn btn-danger">Hapus</button>
-                                                            </form>
-
+                                                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </td>
-                                    </tr> 
-
-                                    @empty
-                                    <tr>
-                                        <th colspan="5" scope="row">Data Tidak Ada</th>
-                                    </tr>  
-                                    @endforelse
-                            </tbody>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <th colspan="5" scope="row">Data Tidak Ada</th>
+                                </tr>
+                            @endforelse
+                        </tbody>
                     </table>
                 </div>
             </div>

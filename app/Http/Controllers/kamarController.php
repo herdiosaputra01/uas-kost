@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kamar;
 use Illuminate\Http\Request;
 
-class kamarController extends Controller
+class KamarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class kamarController extends Controller
     public function create()
     {
         //
-        return view('kamar.form');
+        return view('Kamar.form');
     }
 
     /**
@@ -33,7 +33,7 @@ class kamarController extends Controller
     public function store(Request $request)
     {
         //
-        $kamar = new Kamar;
+        $kamar = new Kamar();
         $kamar->idKamar = $request->idKamar;
         $kamar->noKamar = $request->noKamar;
         $kamar->tipeKamar = $request->tipeKamar;
@@ -50,8 +50,6 @@ class kamarController extends Controller
     public function show(string $id)
     {
         //
-        $kamar = Kamar::find($id);
-        return view('Kamar.edit',compact('Kamar'));
     }
 
     /**
@@ -60,8 +58,8 @@ class kamarController extends Controller
     public function edit(string $id)
     {
         //
-    
-        return redirect('/kamar')->with('success', 'Data berhasil diupdate!');
+        $kamar = Kamar::find($id);
+        return view('Kamar.edit',compact('kamar'));
     }
 
     /**
@@ -70,6 +68,15 @@ class kamarController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $kamar = Kamar::find($id);
+        $kamar->idKamar = $request->idKamar;
+        $kamar->noKamar = $request->noKamar;
+        $kamar->tipeKamar = $request->tipeKamar;
+        $kamar->harga = $request->harga;
+        $kamar->waktu = $request->waktu;
+        $kamar->save();
+
+        return redirect('/kamar')->with('success', 'Data berhasil diupdate!');
     }
 
     /**
@@ -78,5 +85,9 @@ class kamarController extends Controller
     public function destroy(string $id)
     {
         //
+        $kamar = Kamar::find($id);
+        $kamar->delete();
+
+        return redirect('/kamar');
     }
 }

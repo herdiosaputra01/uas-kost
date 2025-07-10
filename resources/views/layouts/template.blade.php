@@ -185,7 +185,7 @@
         <li> <a href="/pemesanan"> <i class="fa fa-shopping-cart"></i> <span>Pemesanan</span> <span class="pull-right-container"> </i> </span> </a>
         </li>
 
-        <li> <a href="#"> <i class="fa fa-money"></i> <span>Pembayaran</span> <span class="pull-right-container"> </i> </span> </a>
+        <li> <a href="/pembayaran"> <i class="fa fa-money"></i> <span>Pembayaran</span> <span class="pull-right-container"> </i> </span> </a>
         </li>
         
 
@@ -244,6 +244,8 @@ Terima kasih telah berkunjung. Temukan berbagai informasi dan layanan terbaik ya
 <!-- jQuery 3 --> 
 <script src="{{asset("/dist/js/jquery.min.js")}}"></script>  
 <script src="{{asset("/dist/bootstrap/js/bootstrap.min.js")}}"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <!-- template --> 
 <script src="{{asset("/dist/js/bizadmin.js")}}"></script> 

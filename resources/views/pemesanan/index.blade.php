@@ -63,12 +63,12 @@ Data Pemesanan
                                                     </div>
 
                                                     <div class="modal-body">
-                                                        Yakin Data Pemesanan a.n. {{$data->noPemesanan}} ingin dihapus?
+                                                        Yakin Data Pemesanan {{$data->noPemesanan}} ingin dihapus?
                                                     </div>
 
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                            <form action="{{ route('pelanggan.destroy', $data->id) }}" method="POST">
+                                                            <form action="{{ route('pemesanan.destroy', $data->id) }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                                 <button type="submit" class="btn btn-danger">Hapus</button>

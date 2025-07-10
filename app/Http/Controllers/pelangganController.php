@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pelanggan;
 use Illuminate\Http\Request;
 
+
 class pelangganController extends Controller
 {
     /**
@@ -83,9 +84,9 @@ class pelangganController extends Controller
     public function destroy(string $id)
     {
         //
-        $pelanggan = Pelanggan::findOrFail($id);
+        $pelanggan = Pelanggan::find($id);
         $pelanggan->delete();
 
-        return redirect()->back()->with('success', 'Data berhasil dihapus.');
+        return redirect('/pelanggan');
     }
 }

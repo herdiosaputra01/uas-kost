@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\kamarController;
 use App\Http\Controllers\pelangganController;
+use App\Http\Controllers\pembayaranController;
 use App\Http\Controllers\pemesananController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -41,6 +42,7 @@ Route::get('/pelanggan/edit/{id}', [pelangganController::class, 'edit']);
 Route::put('/pelanggan/{id}', [pelangganController::class, 'update']);
 Route::delete('/pelanggan/{id}', [PelangganController::class, 'destroy'])->name('pelanggan.destroy');
 
+
 // Route::delete('/pelanggan/{id}', [pelangganController::class, 'destroy']);
 
 // | Method | URL                  | Fungsi Controller |
@@ -58,7 +60,7 @@ Route::get('/kamar', [kamarController::class, 'index']);
 Route::get('/kamar/tambah', [kamarController::class, 'create']);
 Route::post('/kamar', [kamarController::class, 'store']);
 Route::get('/kamar/edit/{id}', [kamarController::class, 'edit']);
-Route::put('/kamarn/{id}', [kamarController::class, 'update']);
+Route::put('/kamar/{id}', [kamarController::class, 'update']);
 Route::delete('/kamar/{id}', [kamarController::class, 'destroy'])->name('kamar.destroy');
 
 //data pemesanan
@@ -67,4 +69,12 @@ Route::get('/pemesanan/tambah', [pemesananController::class, 'create']);
 Route::post('/pemesanan', [pemesananController::class, 'store']);
 Route::get('/pemesanan/edit/{id}', [pemesananController::class, 'edit']);
 Route::put('/pemesanan/{id}', [pemesananController::class, 'update']);
-Route::delete('/pemesanan/{id}', [pemesananController::class, 'destroy'])->name('kamar.destroy');
+Route::delete('/pemesanan/{id}', [pemesananController::class, 'destroy'])->name('pemesanan.destroy');
+
+//data pembayaran
+Route::get('/pembayaran', [pembayaranController::class, 'index']);
+Route::get('/pembayaran/tambah', [pembayaranController::class, 'create']);
+Route::post('/pembayaran', [pembayaranController::class, 'store']);
+Route::get('/pembayaran/edit/{id}', [pembayaranController::class, 'edit']);
+Route::put('/pembayaran/{id}', [pembayaranController::class, 'update']);
+Route::delete('/pembayaran/{id}', [pembayaranController::class, 'destroy'])->name('pembayaran.destroy');
