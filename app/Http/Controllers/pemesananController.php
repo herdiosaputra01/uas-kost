@@ -41,7 +41,7 @@ class pemesananController extends Controller
         $pemesanan->pelanggans_id = $request->pelanggans_id;
         $pemesanan->save();
 
-        return redirect('/pelanggan');
+        return redirect('/pemesanan');
     }
 
     /**

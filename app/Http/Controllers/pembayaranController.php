@@ -15,7 +15,7 @@ class pembayaranController extends Controller
         //
         $nomor = 1;
         $pembayaran = Pembayaran::all();
-        return view('Pembayaran.index', compact('pembayaran','nomor'));
+        return view('Pembayaran.index', compact('pembayaran', 'nomor'));
     }
 
     /**
@@ -25,7 +25,6 @@ class pembayaranController extends Controller
     {
         //
         return view('Pembayaran.form');
-       
     }
 
     /**
@@ -58,7 +57,7 @@ class pembayaranController extends Controller
     {
         //
         $pembayaran = Pembayaran::find($id);
-        return view('Pembayaran.edit',compact('pembayaran'));
+        return view('Pembayaran.edit', compact('pembayaran'));
     }
 
     /**
@@ -82,7 +81,7 @@ class pembayaranController extends Controller
     public function destroy(string $id)
     {
         //
-        $pembayaran= Pembayaran::find($id);
+        $pembayaran = Pembayaran::find($id);
         $pembayaran->delete();
 
         return redirect('/pembayaran');
