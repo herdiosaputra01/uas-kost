@@ -8,38 +8,50 @@
                 <div class="card-header">Form Tambah Data Pemesanan</div>
 
                 <div class="card-body">
-                    <form method="post" action="/pemesanan" enctype="multipart/form-data">
+                    <form method="POST" action="/pemesanan" enctype="multipart/form-data">
                         @csrf
+
+                        {{-- No Pemesanan --}}
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">No Pemesanan</label>
-                            <input type="text" name="noPemesanan" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <label for="noPemesanan" class="form-label">No Pemesanan</label>
+                            <input type="text" name="noPemesanan" class="form-control" id="noPemesanan">
                         </div>
+
+                        {{-- Pilih Kamar --}}
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Id Kamar</label>
-                            <input type="text" name="kamars_id" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Tanggal Masuk</label>
-                            <input type="date" name="tglMasuk" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Tanggal Keluar</label>
-                            <input type="date" name="tglKeluar" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Id Pelanggan</label>
-                            <select name="pelanggans_id" id="" class="form-control">
-                                <option value="">-Pilih Id Pelanggan-</option>
-                                @foreach ($pelanggan as $item)
-                                    <option value="{{$item->idPelanggan}}">{{$item->namaPelanggan}}</option>
+                            <label for="kamars_id" class="form-label">Kamar</label>
+                            <select name="kamars_id" id="kamars_id" class="form-control">
+                                <option value="">-- Pilih Kamar --</option>
+                                @foreach ($kamar as $item)
+                                    <option value="{{ $item->id }}">{{ $item->noKamar }} - {{ $item->tipeKamar }}</option>
                                 @endforeach
                             </select>
                         </div>
 
-                        {{-- <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Id Pelanggan</label>
-                            <input type="text" name="pelanggans_id" class="form-control" id="exampleInputPassword1">
-                        </div> --}}
+                        {{-- Tanggal Masuk --}}
+                        <div class="mb-3">
+                            <label for="tglMasuk" class="form-label">Tanggal Masuk</label>
+                            <input type="date" name="tglMasuk" class="form-control" id="tglMasuk">
+                        </div>
+
+                        {{-- Tanggal Keluar --}}
+                        <div class="mb-3">
+                            <label for="tglKeluar" class="form-label">Tanggal Keluar</label>
+                            <input type="date" name="tglKeluar" class="form-control" id="tglKeluar">
+                        </div>
+
+                        {{-- Pilih Pelanggan --}}
+                        <div class="mb-3">
+                            <label for="pelanggans_id" class="form-label">Pelanggan</label>
+                            <select name="pelanggans_id" id="pelanggans_id" class="form-control">
+                                <option value="">-- Pilih Pelanggan --</option>
+                                @foreach ($pelanggan as $item)
+                                    <option value="{{ $item->idPelanggan }}">{{ $item->namaPelanggan }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        {{-- Tombol Submit --}}
                         <button type="submit" class="btn btn-primary">Tambah</button>
                     </form>
                 </div>

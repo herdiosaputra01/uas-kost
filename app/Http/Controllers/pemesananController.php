@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kamar;
 use App\Models\Pelanggan;
 use App\Models\Pemesanan;
 use Illuminate\Http\Request;
@@ -25,8 +26,9 @@ class pemesananController extends Controller
     public function create()
     {
         //
-        $pelanggan= Pelanggan::all();
-        return view('Pemesanan.form',compact('pelanggan'));
+        $kamar = Kamar::all();
+        $pelanggan = Pelanggan::all();
+        return view('pemesanan.form', compact('kamar', 'pelanggan'));
     }
 
     /**
@@ -61,7 +63,10 @@ class pemesananController extends Controller
     {
         //
         $pemesanan = Pemesanan::find($id);
-        return view('Pemesanan.edit',compact('pemesanan'));
+        $kamar = Kamar::all(); 
+        $pelanggan = Pelanggan::all(); 
+
+        return view('pemesanan.edit', compact('pemesanan', 'kamar', 'pelanggan'));
     }
 
     /**
