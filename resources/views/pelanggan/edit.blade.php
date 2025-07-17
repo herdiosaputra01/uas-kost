@@ -45,3 +45,7 @@
     </div>
 </div>
 @endsection
+
+@error('namaPelanggan')
+    <div class="text-danger">{{ $message }}</div>
+@enderror

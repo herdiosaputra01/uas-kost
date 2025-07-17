@@ -22,8 +22,8 @@
                     <th>ID Kamar</th>
                     <th>No Kamar</th>
                     <th>Tipe Kamar</th>
-                    <th>Harga</th>
-                    <th>Waktu</th>
+                    {{-- <th>Harga</th> --}}
+                    {{-- <th>Waktu</th> --}}
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -34,13 +34,40 @@
                         <td>{{ $data->idKamar }}</td>
                         <td>{{ $data->noKamar }}</td>
                         <td>{{ $data->tipeKamar }}</td>
-                        <td>{{ $data->harga }}</td>
-                        <td>{{ $data->waktu }}</td>
+                        {{-- <td>{{ $data->harga }}</td> --}}
+                        {{-- <td>{{ $data->waktu }}</td> --}}
                         <td>
-                            <!-- Detail Button (placeholder) -->
-                            <a href="#" class="btn btn-warning btn-sm" title="Lihat Detail">
+                            <!-- Detail Modal Trigger -->
+                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal{{ $data->id }}">
                                 <i class="fa fa-eye"></i>
-                            </a>
+                            </button>
+
+                            <!-- Detail Modal -->
+                            <div class="modal fade" id="detailModal{{ $data->id }}" tabindex="-1" aria-labelledby="detailModalLabel{{ $data->id }}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="detailModalLabel{{ $data->id }}">Detail Pelanggan</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Harga</td>
+                                                    <td>: {{ $data->harga }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Waktu</td>
+                                                    <td>: {{ $data->waktu }}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <!-- Edit Button -->
                             <a href="{{ url('/kamar/edit/' . $data->id) }}" class="btn btn-info btn-sm" title="Edit Data">
