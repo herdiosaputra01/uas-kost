@@ -8,27 +8,36 @@
                 <div class="card-header">Form Edit Data Pelanggan</div>
 
                 <div class="card-body">
-                        <form method="post" action="/pelanggan/{{$pelanggan->id}}">
+                    <form method="POST" action="/pelanggan/{{ $pelanggan->id }}">
                         @csrf
                         @method('PUT')
+
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Id Pelanggan</label>
-                            <input type="text" value="{{$pelanggan->idPelanggan}}" name="idPelanggan" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Nama Pelanggan</label>
-                            <input type="text" value="{{$pelanggan->namaPelanggan}}" name="namaPelanggan" class="form-control" id="exampleInputPassword1">
-                        </div>
-                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Alamat Pelanggan</label>
-                            <input type="text" value="{{$pelanggan->alamatPelanggan}}" name="alamatPelanggan" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Email</label>
-                            <input type="email" value="{{$pelanggan->email}}" name="email" class="form-control" id="exampleInputPassword1">
+                            <label for="idPelanggan" class="form-label">ID Pelanggan</label>
+                            <input type="text" name="idPelanggan" value="{{ $pelanggan->idPelanggan }}" class="form-control" id="idPelanggan">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <div class="mb-3">
+                            <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
+                            <input type="text" name="namaPelanggan" value="{{ $pelanggan->namaPelanggan }}" class="form-control" id="namaPelanggan">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="alamatPelanggan" class="form-label">Alamat Pelanggan</label>
+                            <input type="text" name="alamatPelanggan" value="{{ $pelanggan->alamatPelanggan }}" class="form-control" id="alamatPelanggan">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="noHp" class="form-label">No Handphone</label>
+                            <input type="text" name="noHp" value="{{ $pelanggan->noHp }}" class="form-control" id="noHp">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="email" value="{{ $pelanggan->email }}" class="form-control" id="email">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                     </form>
                 </div>
             </div>
