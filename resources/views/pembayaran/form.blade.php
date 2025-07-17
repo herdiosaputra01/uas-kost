@@ -15,7 +15,7 @@
 
                         <div class="mb-3">
                             <label for="idPembayaran" class="form-label">ID Pembayaran</label>
-                            <input type="text" name="idPembayaran" class="form-control" id="idPembayaran" placeholder="Contoh: PAY001" required>
+                            <input type="text" name="idPembayaran" class="form-control" id="idPembayaran" placeholder="Contoh: 0001" required>
                         </div>
 
                         <div class="mb-3">
