@@ -46,19 +46,6 @@ Route::get('/pelanggan/edit/{id}', [pelangganController::class, 'edit']);
 Route::put('/pelanggan/{id}', [pelangganController::class, 'update']);
 Route::delete('/pelanggan/{id}', [PelangganController::class, 'destroy'])->name('pelanggan.destroy');  
 
-
-// Route::delete('/pelanggan/{id}', [pelangganController::class, 'destroy']);
-
-// | Method | URL                  | Fungsi Controller |
-// | ------ | -------------------- | ----------------- |
-// | GET    | /pelanggan           | `index()`         |
-// | GET    | /pelanggan/create    | `create()`        |
-// | POST   | /pelanggan           | `store()`         |
-// | GET    | /pelanggan/{id}      | `show()`          |
-// | GET    | /pelanggan/{id}/edit | `edit()`          |
-// | PUT    | /pelanggan/{id}      | `update()`        |
-// | DELETE | /pelanggan/{id}      | `destroy()`       |
-
 //data kamar
 Route::get('/kamar', [kamarController::class, 'index']);
 Route::get('/kamar/tambah', [kamarController::class, 'create']);

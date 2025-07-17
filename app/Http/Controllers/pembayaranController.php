@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pemesanan;
 use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,8 @@ class pembayaranController extends Controller
     public function create()
     {
         //
-        return view('Pembayaran.form');
+        $pemesanan = Pemesanan::all();
+        return view('Pembayaran.form', compact('pemesanan'));
     }
 
     /**
@@ -32,15 +34,33 @@ class pembayaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'idPembayaran' => 'required',
+            'tglPembayaran' => 'required|date',
+            'pemesanans_id' => 'required|exists:pemesanans,id',
+            ]);
+
         $pembayaran = new Pembayaran;
         $pembayaran->idPembayaran = $request->idPembayaran;
         $pembayaran->tglPembayaran = $request->tglPembayaran;
         $pembayaran->pemesanans_id = $request->pemesanans_id;
         $pembayaran->save();
 
-        return redirect('/pembayaran');
+        return redirect('/pembayaran')->with('success', 'Data pembayaran berhasil ditambahkan!');
     }
+
+    
+    // public function store(Request $request)
+    // {
+    //     //
+    //     $pembayaran = new Pembayaran;
+    //     $pembayaran->idPembayaran = $request->idPembayaran;
+    //     $pembayaran->tglPembayaran = $request->tglPembayaran;
+    //     $pembayaran->pemesanans_id = $request->pemesanans_id;
+    //     $pembayaran->save();
+
+    //     return redirect('/pembayaran');
+    // }
 
     /**
      * Display the specified resource.
@@ -56,8 +76,9 @@ class pembayaranController extends Controller
     public function edit(string $id)
     {
         //
-        $pembayaran = Pembayaran::find($id);
-        return view('Pembayaran.edit', compact('pembayaran'));
+         $pembayaran = Pembayaran::findOrFail($id);
+        $pemesanans = Pemesanan::all();
+        return view('Pembayaran.edit', compact('pembayaran', 'pemesanans'));
     }
 
     /**

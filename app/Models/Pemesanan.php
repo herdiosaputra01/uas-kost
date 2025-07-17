@@ -29,5 +29,11 @@ class Pemesanan extends Model
         'pelanggans_id'
     ];
 
+   public function pembayaran()
+    {
+        return $this->hasMany(Pembayaran::class, 'pemesanans_id');
+    }
+
+
 }
 
