@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // migrations/create_pelanggans_table.php
         Schema::create('pelanggans', function (Blueprint $table) {
-            $table->id();
-            $table->string('idPelanggan')->unique();
-            $table->string('namaPelanggan',100);
-            $table->string('alamatPelanggan',100);
-            $table->string('noHp', 20); 
-            $table->string('email',100);
+            $table->string('idPelanggan')->primary();
+            $table->string('namaPelanggan', 100);
+            $table->string('alamatPelanggan', 100);
+            $table->string('noHp', 20);
+            $table->string('email', 100);
             $table->timestamps();
         });
+
     }
 
     /**

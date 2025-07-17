@@ -9,14 +9,24 @@ class Pelanggan extends Model
 {
     use HasFactory;
 
-    public function pemesanan()
-    {
-        return $this->hasMany(Pemesanan::class, 'pelanggans_id', 'idPelanggan');
-    } 
+    // protected $primaryKey = 'idPelanggan';
+    //     public $incrementing = false; // karena bukan auto-increment
 
-    protected $table = 'pelanggans';
+    //     protected $fillable = [
+    //         'idPelanggan',
+    //         'namaPelanggan',
+    //         'alamatPelanggan',
+    //         'noHp',
+    //         'email'];
 
-    protected $primaryKey = 'idPelanggan';
+    // protected $fillable = ['idPelanggan', 'namaPelanggan', 'alamatPelanggan', 'noHp', 'email'];
 
-    protected $fillable = ['namaPelanggan', 'alamat', 'noTelp'];
+    // TIDAK PERLU tambahkan $primaryKey, $incrementing, atau $keyType
+
+
+    // protected $table = 'pelanggans';
+
+    // protected $primaryKey = 'idPelanggan';
+
+    // protected $fillable = ['namaPelanggan', 'alamat', 'noTelp'];
 }

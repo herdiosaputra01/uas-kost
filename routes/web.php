@@ -38,7 +38,6 @@ Auth::routes();
 Route::get('/dashboard', [dashboardController::class, 'index']);
 
 //data pelanggan
-
 Route::get('/pelanggan', [pelangganController::class, 'index']);
 Route::get('/pelanggan/tambah', [pelangganController::class, 'create']);
 Route::post('/pelanggan', [pelangganController::class, 'store']);
