@@ -1,6 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Login - Admin Kost</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & FontAwesome -->
+  <link rel="stylesheet" href="{{ asset('/dist/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('/dist/css/font-awesome/css/font-awesome.min.css') }}">
+
+  <!-- Custom Style -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('{{ asset('dist/img/p.kmr.jpg') }}') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px;
+      color: #fff;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-card h3 {
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    .form-control {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #fff;
+    }
+
+    .form-control:focus {
+      background-color: rgba(255, 255, 255, 0.3);
+      border: none;
+      box-shadow: none;
+      color: #fff;
+    }
+
+    .form-check-label, .text-muted {
+      color: #ddd;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      padding: 10px 0;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    .login-logo img {
+      height: 80px;
+      margin-bottom: 20px;
+    }
+
+    .invalid-feedback {
+      color: #ffc107;
+    }
+
+    a {
+      color: #ffd966;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-card">
+    <div class="text-center login-logo">
+      <img src="{{ asset('dist/img/lg.png') }}" alt="Logo">
+    </div>
+    <h3 class="text-center">Sign In</h3>
+
+    <form method="POST" action="{{ route('login') }}">
+      @csrf
+      <div class="form-group mb-3">
+        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+               name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
+        @error('email')
+          <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+      </div>
+
+      <div class="form-group mb-3">
+        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+               name="password" placeholder="Password" required>
+        @error('password')
+          <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+        @enderror
+      </div>
+
+      <div class="form-check d-flex justify-content-between align-items-center mb-3">
+        <div>
+          <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                 {{ old('remember') ? 'checked' : '' }}>
+          <label class="form-check-label" for="remember">Remember Me</label>
+        </div>
+        <a href="{{ route('password.request') }}"><i class="fa fa-lock"></i> Lupa Password?</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+
+    <div class="text-center mt-3">
+      <small>Belum punya akun? <a href="{{ route('register') }}">Daftar di sini</a></small>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="{{ asset('/dist/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('/dist/bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+</html>
+
+
+{{-- <!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Biz Admin - Multipurpose bootstrap 4 admin templates</title>
@@ -126,7 +264,7 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 </body>
-</html>
+</html> --}}
 
 
 
