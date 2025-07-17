@@ -55,7 +55,7 @@
                                  aria-labelledby="detailModalLabel{{ $data->id }}" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-md">
                                     <div class="modal-content shadow-lg rounded-4">
-                                        <div class="modal-header bg-primary text-white rounded-top-4">
+                                        <div class="modal-header bg-warning text-white rounded-top-4">
                                             <h5 class="modal-title fw-semibold" id="detailModalLabel{{ $data->id }}">
                                                 <i class="fa fa-info-circle me-1"></i> Detail Pembayaran
                                             </h5>

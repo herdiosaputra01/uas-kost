@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('idPelanggan')->unique();
             $table->string('namaPelanggan',100);
             $table->string('alamatPelanggan',100);
+            $table->string('noHp', 20); 
             $table->string('email',100);
             $table->timestamps();
         });

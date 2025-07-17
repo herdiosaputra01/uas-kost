@@ -1,16 +1,17 @@
 @extends('layouts.template')
 
 @section('content')
-<div class="container">
+<div class="container py-4">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Form Edit Data Pelanggan</div>
+        <div class="col-lg-12">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-primary text-white rounded-top-4">
+                    <h5 class="mb-0"><i class="fa fa-edit me-2"></i>Edit Data Pelanggan</h5>
+                </div>
 
                 <div class="card-body">
-                    <form method="POST" action="/pelanggan/{{ $pelanggan->id }}">
+                     <form method="post" action="/pelanggan" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
 
                         <div class="mb-3">
                             <label for="idPelanggan" class="form-label">ID Pelanggan</label>
@@ -45,7 +46,3 @@
     </div>
 </div>
 @endsection
-
-@error('namaPelanggan')
-    <div class="text-danger">{{ $message }}</div>
-@enderror

@@ -24,7 +24,7 @@
                         {{-- <th scope="col">Tanggal Masuk</th>
                         <th scope="col">Tanggal Keluar</th> --}}
                         <th scope="col">Id Pelanggan</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>

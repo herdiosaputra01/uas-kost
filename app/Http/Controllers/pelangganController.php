@@ -33,15 +33,25 @@ class pelangganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi input
+        $request->validate([
+        'idPelanggan' => 'required|string|max:10',
+        'namaPelanggan' => 'required|string|max:100',
+        'alamatPelanggan' => 'required|string|max:255',
+        'noHp' => 'required|string|max:15',
+        'email' => 'required|email|max:100',
+        ]);
+
+        // Simpan ke database
         $pelanggan = new Pelanggan;
         $pelanggan->idPelanggan = $request->idPelanggan;
         $pelanggan->namaPelanggan = $request->namaPelanggan;
         $pelanggan->alamatPelanggan = $request->alamatPelanggan;
+        $pelanggan->noHp = $request->noHp; // ✅ ini penting!
         $pelanggan->email = $request->email;
         $pelanggan->save();
 
-        return redirect('/pelanggan');
+    return redirect('/pelanggan')->with('success', 'Data pelanggan berhasil ditambahkan!');
     }
 
     /**

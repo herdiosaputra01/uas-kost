@@ -76,7 +76,7 @@ class pembayaranController extends Controller
     public function edit(string $id)
     {
         //
-         $pembayaran = Pembayaran::findOrFail($id);
+        $pembayaran = Pembayaran::findOrFail($id);
         $pemesanans = Pemesanan::all();
         return view('Pembayaran.edit', compact('pembayaran', 'pemesanans'));
     }
