@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pelanggan;
 use App\Models\Pemesanan;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,8 @@ class pemesananController extends Controller
     public function create()
     {
         //
-        return view('Pemesanan.form');
+        $pelanggan= Pelanggan::all();
+        return view('Pemesanan.form',compact('pelanggan'));
     }
 
     /**

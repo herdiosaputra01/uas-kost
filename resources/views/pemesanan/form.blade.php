@@ -28,8 +28,18 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Id Pelanggan</label>
-                            <input type="text" name="pelanggans_id" class="form-control" id="exampleInputPassword1">
+                            <select name="pelanggans_id" id="" class="form-control">
+                                <option value="">-Pilih Id Pelanggan-</option>
+                                @foreach ($pelanggan as $item)
+                                    <option value="{{$item->idPelanggan}}">{{$item->namaPelanggan}}</option>
+                                @endforeach
+                            </select>
                         </div>
+
+                        {{-- <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Id Pelanggan</label>
+                            <input type="text" name="pelanggans_id" class="form-control" id="exampleInputPassword1">
+                        </div> --}}
                         <button type="submit" class="btn btn-primary">Tambah</button>
                     </form>
                 </div>
