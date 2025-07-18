@@ -63,14 +63,14 @@
                 <img src="{{ asset('/dist/img/001.jpg') }}" alt="User" class="rounded-circle me-2" width="40">
                 <div>
                   <div class="fw-semibold">Hanif Ferdiansyah</div>
-                  <small>Memesan Kamar 001</small>
+                  <small>Memesan Kamar 1</small>
                 </div>
               </a></li>
               <li><a class="dropdown-item d-flex align-items-center" href="#">
-                <img src="{{ asset('/dist/img/img3.jpg') }}" class="rounded-circle me-2" width="40">
+                <img src="{{ asset('/dist/img/002.jpg') }}" class="rounded-circle me-2" width="40">
                 <div>
-                  <div class="fw-semibold">Nikolaj S. Henriksen</div>
-                  <small>See you soon...</small>
+                  <div class="fw-semibold">Aidil Ridha</div>
+                  <small>Memesan Kamar 2</small>
                 </div>
               </a></li>
               <li class="dropdown-footer text-center mt-2"><a href="#" class="text-decoration-none">Lihat Semua Pesan</a></li>
@@ -87,17 +87,19 @@
               <li class="dropdown-header fw-bold">Notifikasi</li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="icon-circle bg-danger text-white me-2"><i class="fa fa-tasks"></i></div>
+                <img src="{{ asset('/dist/img/003.jpg') }}" class="rounded-circle me-2" width="40">
+                {{-- <div class="icon-circle bg-danger text-white me-2"><i class="fa fa-tasks"></i></div> --}}
                 <div>
-                  <div class="fw-semibold">Alex C. Patton</div>
-                  <small>Completed the task</small>
+                  <div class="fw-semibold">Rahmad Yuliansyah</div>
+                  <small>Bang Masih Ada Kamar Kosong</small>
                 </div>
               </a></li>
               <li><a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="icon-circle bg-primary text-white me-2"><i class="fa fa-coffee"></i></div>
+                <img src="{{ asset('/dist/img/004.jpg') }}" class="rounded-circle me-2" width="40">
+                {{-- <div class="icon-circle bg-primary text-white me-2"><i class="fa fa-coffee"></i></div> --}}
                 <div>
-                  <div class="fw-semibold">Nikolaj Henriksen</div>
-                  <small>Update pending</small>
+                  <div class="fw-semibold">Aidil Multazam</div>
+                  <small>Bang Berapa Kamar Kosong 1 Tahun</small>
                 </div>
               </a></li>
               <li class="dropdown-footer text-center mt-2"><a href="#" class="text-decoration-none">Lihat Semua Notifikasi</a></li>
