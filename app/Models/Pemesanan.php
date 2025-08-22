@@ -9,31 +9,27 @@ class Pemesanan extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+    'noPemesanan', 'kamars_id', 'pelanggans_id', 'tglMasuk', 'tglKeluar'
+    ];
+
+
+    // Relasi ke kamar
     public function kamar()
     {
         return $this->belongsTo(Kamar::class, 'kamars_id');
     }
 
+    // Relasi ke pelanggan
     public function pelanggan()
     {
-        return $this->belongsTo(Pelanggan::class, 'pelanggans_id', 'idPelanggan');
-    }
-
-    protected $table = 'pemesanans';
-
-    protected $fillable = [
-        'noPemesanan',
-        'kamars_id',
-        'tglMasuk',
-        'tglKeluar',
-        'pelanggans_id'
-    ];
-
-   public function pembayaran()
-    {
-        return $this->hasMany(Pembayaran::class, 'pemesanans_id');
+        return $this->belongsTo(Pelanggan::class, 'pelanggans_id');
     }
 
 
+    // Relasi ke pembayaran (jika ada)
+    // public function pembayaran()
+    // {
+    //     return $this->hasMany(Pembayaran::class, 'pemesanans_id');
+    // }
 }
-

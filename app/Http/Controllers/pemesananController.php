@@ -15,9 +15,14 @@ class pemesananController extends Controller
     public function index()
     {
         //
+        $pemesanan = Pemesanan::with('pelanggan', 'kamar')->get();
         $nomor = 1;
-        $pemesanan = Pemesanan::all();
-        return view('Pemesanan.index', compact('pemesanan','nomor'));
+        return view('pemesanan.index', compact('pemesanan', 'nomor'));
+
+
+        // $nomor = 1;
+        // $pemesanan = Pemesanan::all();
+        // return view('Pemesanan.index', compact('pemesanan','nomor'));
     }
 
     /**
@@ -42,7 +47,7 @@ class pemesananController extends Controller
         $pemesanan->kamars_id = $request->kamars_id;
         $pemesanan->tglMasuk = $request->tglMasuk;
         $pemesanan->tglKeluar = $request->tglKeluar;
-        $pemesanan->pelanggans_id = $request->pelanggans_id;
+        $pemesanan->pelanggans_id = $request->pelanggans_id; // Menggunakan ID pelanggan
         $pemesanan->save();
 
         return redirect('/pemesanan');
@@ -80,7 +85,7 @@ class pemesananController extends Controller
         $pemesanan->kamars_id = $request->kamars_id;
         $pemesanan->tglMasuk = $request->tglMasuk;
         $pemesanan->tglKeluar = $request->tglKeluar;
-        $pemesanan->pelanggans_id = $request->pelanggans_id;
+        $pemesanan->namaPelanggan = $request->namaPelanggan;
         $pemesanan->save();
 
         return redirect('/pemesanan')->with('success', 'Data berhasil diupdate!');

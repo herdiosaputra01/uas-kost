@@ -117,13 +117,14 @@
                                             <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">
                                                 <i class="fa fa-times me-1"></i> Batal
                                             </button>
-                                            <form action="{{ route('pelanggan.destroy', $data->id) }}" method="POST" class="d-inline">
+                                            {{-- <form action="{{ route('pelanggan.destroy', $data->id) }}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="btn btn-danger btn-sm">
                                                     <i class="fa fa-trash me-1"></i> Hapus
                                                 </button>
-                                            </form>
+                                            </form> --}}
+
                                         </div>
                                     </div>
                                 </div>
